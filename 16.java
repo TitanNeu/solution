@@ -1,4 +1,6 @@
 // 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+
+
 /*
 public class ListNode {
     int val;
@@ -8,6 +10,7 @@ public class ListNode {
         this.val = val;
     }
 }*/
+
 //非递归常规算法
 class Solution2 {
     public ListNode Merge(ListNode list1,ListNode list2) {
