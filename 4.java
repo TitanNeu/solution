@@ -14,20 +14,28 @@
  */
 public class Solution {
     public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
-        return reBuildBTree(pre, 0, pre.length-1, in, 0, in.length-1);
-    }
-    
-    public TreeNode reBuildBTree(int[] pre, int preHead, int preTail, int[] in, int inHead, int inTail){
-        if(preHead > preTail || inHead > inTail)
+        if(pre == null || in == null || pre.length == 0 || in.length == 0)
             return null;
-        TreeNode root = new TreeNode(pre[preHead]);
+        return reBuildTree(pre, 0, pre.length-1, in, 0, in.length-1);
+    }
+    //建立本轮的根节点    
+    public TreeNode reBuildTree(int [] pre, int preHead, int preTail, int [] in, int inHead, int inTail){
+        if(preHead > preTail || inHead > inTail){
+            return null;
+        }
+        int rootVal = pre[preHead];
+        TreeNode root = new TreeNode(rootVal);
+        //寻找in[]数组的根节点的索引，分为左右子树
+        int rootIndex = inHead;
         for(int i = inHead; i <= inTail; i++){
-            if(in[i] == root.val){
-                root.left = reBuildBTree(pre, preHead+1, i-inHead+preHead, in, inHead, i-1);
-                root.right = reBuildBTree(pre, i-inHead+preHead+1, preTail, in, i+1, inTail);
+            if(in[i] == rootVal){
+                rootIndex = i;
             }
         }
-        
+        // 在LVR遍历的数组中找到根节点的索引，将LVR序列分为左右子树，递归进行重建
+        root.left = reBuildTree(pre, preHead+1, rootIndex-inHead+preHead, in, inHead, rootIndex-1);
+        root.right = reBuildTree(pre, rootIndex-inHead+preHead+1, preTail, in, rootIndex+1, inTail);
         return root;
+        
     }
 }
