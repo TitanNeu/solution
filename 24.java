@@ -46,7 +46,7 @@ public class Solution {
         FindPath(root.left, target);
         //继续在右子树中寻找路径
         FindPath(root.right, target);
-        //回退到根节点
+        //back to the nearest root node
         path.remove(path.size()-1);
         
         return paths;
