@@ -33,6 +33,8 @@ public class TreeNode {
 
 }
 */
+
+//from top to bottom
 class Solution2 {
     public void Mirror(TreeNode root) {
         if(root == null)
@@ -49,6 +51,8 @@ class Solution2 {
         
     }
 }
+
+//Building mirror tree from its bottom to top.
 
 public class Solution{
     public void Mirror(TreeNode root){
