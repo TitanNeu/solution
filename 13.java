@@ -11,7 +11,7 @@ public class Solution {
             return;
         ArrayList<Integer> oddArr = new ArrayList<>();
         ArrayList<Integer> evenArr = new ArrayList<>();
-        Arrays.sort(array);
+        
         int len = array.length;
         for(int i = 0; i < len; i++){
             if(array[i] %2 == 0){
