@@ -51,8 +51,8 @@ public class Solution{
         //k <= 0的情况必须判断
         if(head == null || k <= 0)
             return null;
-        //p1在前，p2在后; p1从第一个点，先移动到链表正数第k位置
-        //然后p1和p2同时移动，等到p2到达最后一个节点，p1所在的位置就是所求的位置
+        //p2 after p1; p1从第一个点，先移动到链表正数第k位置
+        //然后p1和p2同时移动，等到p1到达最后一个节点，p2所在的位置就是所求的位置
         ListNode p1 = head;
         ListNode p2 = head;
         //p1移动到第k的节点位置，从第一移动到第k需要k-1次
