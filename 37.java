@@ -18,6 +18,8 @@ public class Solution {
     }
 }
 */
+
+//nlogn
 public class Solution{
     public int GetNumberOfK(int[] array, int k){
         if(array == null || array.length == 0)
