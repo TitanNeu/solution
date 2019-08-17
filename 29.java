@@ -229,7 +229,7 @@ public class Solution {
             heapSortCore(array, p, len);
         }
         for(int i = len-1; i >= 0; i--){
-            //delete root node，and decrease heap's length
+            //实际上是删除最大堆操作
             swap(array, 0, i);
             heapSortCore(array,0,i);
         }
