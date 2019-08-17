@@ -16,8 +16,8 @@ public class Solution {
     public int countFunc(int threshold, int i, int j, int rows, int cols, boolean[][] flag){
         if(i < 0 || i > rows-1 || j < 0 || j > cols-1)
             return 0;
-        boolean isLegal = (calNumSum(i)+calNumSum(j)) > threshold; //数字的和有没有越界
-        if(flag[i][j] == true || isLegal){
+        boolean illeegal = (calNumSum(i)+calNumSum(j)) > threshold; //数字的和有没有越界
+        if(flag[i][j] == true || illegal){
             return 0;
         }
         flag[i][j] = true; //当前(i, j)符合条件
